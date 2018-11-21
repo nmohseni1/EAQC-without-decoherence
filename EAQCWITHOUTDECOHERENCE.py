@@ -162,6 +162,6 @@ for taumax in range (100,101,20):
 
         P_success='P_instancesregime1'+str(count_time)
         P_success_f=open(P_success,'w')
-        for i in range(1):
+        for i in range(7):
             tt=str(i+1)+"\t"+str(p1_final[i])+"\n"
             P_success_f.write(tt)
