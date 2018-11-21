@@ -1,9 +1,17 @@
 import time
+import argparse
 import numpy as np
 from qutip import *
-from math import sqrt
 from scipy import *
+from scipy.special import factorial
 ##*******************************      set up the parapeteres
+
+parser = argparse.ArgumentParser(description='Adiabatic Quantum Computing using Spin Ensembles', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument('--decoherence', action='store_true', help='Enables decoherence')
+pargs = parser.parse_args()
+
+print 'decoherence: ' + str(pargs.decoherence)
+
 count_time=0
 mat1 = genfromtxt("test");
 for taumax in range (100,101,20):
@@ -22,7 +30,7 @@ for taumax in range (100,101,20):
     #********************************** Construct the  Initial State
         g1=np.zeros((N+1,1),float)
         for i in range(0,N+1):
-            g1[i]=((1./sqrt(2))**i)*((1./sqrt(2))**(N-i))*sqrt(math.factorial(N)/((math.factorial(i))*(math.factorial(N-i))))
+            g1[i]=((1./np.sqrt(2.))**i)*((1./np.sqrt(2.))**(N-i))*np.sqrt(factorial(N)/((factorial(i))*(factorial(N-i))))
         psi_list=[Qobj(g1).unit() for n in range(3)]
         psii=tensor(psi_list)
     #*********************************  Construct the Hamiltonian
@@ -115,9 +123,11 @@ for taumax in range (100,101,20):
     #***************************************  occupation probabilities of the energy levels without decoherence
 
                     for n, eket in enumerate(ekets):
-                        P_mat[idx[0],n] =abs((eket.dag().data * psi.data)[0,0])**2
+                        if not pargs.decoherence :
+                            P_mat[idx[0],n] =abs((eket.dag().data * psi.data)[0,0])**2
     #***********************************  occupation probability of the energy levels with decoherence
-                        #P_mat[idx[0],n] =(abs((ekets[n].dag() * psi*ekets[n])[0,0]))
+                        else :
+                            P_mat[idx[0],n] =(abs((ekets[n].dag() * psi*ekets[n])[0,0]))
                       #x=x+P_mat[idx[0],n]  #just to check if sum(P)=1
     #**************************************** expectation values of sz operators (for finding replica states)
                         ex_1[idx[0],n]=expect(sz1,ekets[n])
@@ -133,8 +143,10 @@ for taumax in range (100,101,20):
                     idx[0] += 1
                     return(psi)
     #**************************************** solving the master equation without and with decoherence(Forth argument is related to deohernce operators)
-
-                mesolve(h_t, psii, taulist, [], process_rho, args,_safe_mode=False)
+                c_ops = []
+                if pargs.decoherence :
+                    c_ops = [np.sqrt(0.0001)*sz1,np.sqrt(0.0001)*sz2,np.sqrt(0.0001)*sz3]
+                mesolve(h_t, psii, taulist, c_ops, process_rho, args,_safe_mode=False)
     #***********************************  finding the number of equiavalent states with ground state
 
                 for n in range(M):        #using the output of the adiabatic evolution
