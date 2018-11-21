@@ -2,8 +2,8 @@ import time
 import argparse
 import numpy as np
 from qutip import *
-from math import sqrt
 from scipy import *
+from scipy.special import factorial
 ##*******************************      set up the parapeteres
 
 parser = argparse.ArgumentParser(description='Adiabatic Quantum Computing using Spin Ensembles', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
@@ -30,7 +30,7 @@ for taumax in range (100,101,20):
     #********************************** Construct the  Initial State
         g1=np.zeros((N+1,1),float)
         for i in range(0,N+1):
-            g1[i]=((1./sqrt(2))**i)*((1./sqrt(2))**(N-i))*sqrt(math.factorial(N)/((math.factorial(i))*(math.factorial(N-i))))
+            g1[i]=((1./np.sqrt(2.))**i)*((1./np.sqrt(2.))**(N-i))*np.sqrt(factorial(N)/((factorial(i))*(factorial(N-i))))
         psi_list=[Qobj(g1).unit() for n in range(3)]
         psii=tensor(psi_list)
     #*********************************  Construct the Hamiltonian
