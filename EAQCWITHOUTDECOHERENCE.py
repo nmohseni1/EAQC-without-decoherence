@@ -3,7 +3,6 @@ import numpy as np
 from qutip import *
 from math import sqrt
 from scipy import *
-import matplotlib.pyplot as plt
 ##*******************************      set up the parapeteres
 count_time=0
 mat1 = genfromtxt("test");
