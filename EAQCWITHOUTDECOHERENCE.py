@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(description='Adiabatic Quantum Computing using 
 parser.add_argument('--decoherence', action='store_true', help='Enables decoherence')
 pargs = parser.parse_args()
 
-print 'decoherence: ' + str(pargs.decoherence)
+print('decoherence: ' + str(pargs.decoherence))
 
 count_time=0
 mat1 = genfromtxt("test");
