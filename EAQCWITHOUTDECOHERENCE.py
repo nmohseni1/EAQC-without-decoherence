@@ -18,11 +18,11 @@ for taumax in range (100,101,20):
     count_time=count_time+1
     print('taulist',taumax)
     taulist= np.linspace(0,taumax,100)
-    num_trial=850                     #number of instances
+    num_trial=3                     #number of instances
     p1_final=[]
     random.seed(10)
-    q=4                                 #number of particles
-    for N in range(3,q):
+    q=8                                 #number of particles
+    for N in range(1,q):
         M=(N+1)*(N+1)*(N+1)
         probability=[]
         print('N=',N)
@@ -163,10 +163,10 @@ for taumax in range (100,101,20):
 
         #print('success_eachtrial',success_eachtrial)
         #print('success_eachtrial',size(success_eachtrial))
-        success_alltrials=sum(success_eachtrial[i] for i in range(60))
+        success_alltrials=sum(success_eachtrial[i] for i in range(1))
         #print('success_alltrials',success_alltrials)
 
-        p1_final.append(success_alltrials/60)
+        p1_final.append(success_alltrials/1)
 
         print('p_final',p1_final)
 
