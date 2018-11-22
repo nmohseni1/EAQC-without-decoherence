@@ -1,0 +1,39 @@
+_frozen_importlib:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+/home/mmn362/miniconda2/envs/qtl/lib/python3.6/site-packages/qutip/__init__.py:161: UserWarning: matplotlib not found: Graphics will not work.
+  warnings.warn("matplotlib not found: Graphics will not work.")
+/home/mmn362/miniconda2/envs/qtl/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+python: 3.6.7 | packaged by conda-forge | (default, Nov 21 2018, 02:32:25) 
+[GCC 4.8.2 20140120 (Red Hat 4.8.2-15)]
+
+numpy: 1.15.0
+qutip: 4.3.1
+scipy: 1.1.0
+_frozen_importlib:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+/home/mmn362/miniconda2/envs/qtl/lib/python3.6/site-packages/qutip/__init__.py:161: UserWarning: matplotlib not found: Graphics will not work.
+  warnings.warn("matplotlib not found: Graphics will not work.")
+/home/mmn362/miniconda2/envs/qtl/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+decoherence: False
+taulist 100
+N= 1
+ng 1
+p_final [0.9999929817633633]
+N= 2
+ng 1
+p_final [0.9999929817633633, 0.9998809211874553]
+N= 3
+ng 3
+p_final [0.9999929817633633, 0.9998809211874553, 0.9996395470930552]
+N= 4
+ng 4
+p_final [0.9999929817633633, 0.9998809211874553, 0.9996395470930552, 0.9994671359250737]
+N= 5
+ng 6
+p_final [0.9999929817633633, 0.9998809211874553, 0.9996395470930552, 0.9994671359250737, 0.9995023673510598]
+N= 6
+ng 9
+p_final [0.9999929817633633, 0.9998809211874553, 0.9996395470930552, 0.9994671359250737, 0.9995023673510598, 0.9997244629598091]
+N= 7
+ng 12
+p_final [0.9999929817633633, 0.9998809211874553, 0.9996395470930552, 0.9994671359250737, 0.9995023673510598, 0.9997244629598091, 0.9997349824468059]

@@ -1,0 +1,11 @@
+_frozen_importlib:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+/home/mmn362/miniconda2/envs/qtl/lib/python3.6/site-packages/qutip/__init__.py:161: UserWarning: matplotlib not found: Graphics will not work.
+  warnings.warn("matplotlib not found: Graphics will not work.")
+/home/mmn362/miniconda2/envs/qtl/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: numpy.dtype size changed, may indicate binary incompatibility. Expected 96, got 88
+  return f(*args, **kwds)
+python: 3.6.7 | packaged by conda-forge | (default, Nov 21 2018, 02:32:25) 
+[GCC 4.8.2 20140120 (Red Hat 4.8.2-15)]
+
+numpy: 1.15.0
+qutip: 4.3.1
+scipy: 1.1.0
