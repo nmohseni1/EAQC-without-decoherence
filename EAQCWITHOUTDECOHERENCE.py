@@ -21,8 +21,8 @@ for taumax in range (100,101,20):
     num_trial=850                     #number of instances
     p1_final=[]
     random.seed(10)
-    q=8                                 #number of particles
-    for N in range(1,q):
+    q=4                                 #number of particles
+    for N in range(3,q):
         M=(N+1)*(N+1)*(N+1)
         probability=[]
         print('N=',N)
@@ -172,8 +172,9 @@ for taumax in range (100,101,20):
 
      #********************************   save success probability
 
-        P_success='P_instancesregime1'+str(count_time)
-        P_success_f=open(P_success,'w')
-        for i in range(7):
-            tt=str(i+1)+"\t"+str(p1_final[i])+"\n"
-            P_success_f.write(tt)
+    P_success='P_instancesregime1'+str(count_time)
+    P_success_f=open(P_success,'w')
+    for i in range(6):
+        tt=str(i+1)+"\t"+str(p1_final[i])+"\n"
+        P_success_f.write(tt)
+    P_success_f.close()
