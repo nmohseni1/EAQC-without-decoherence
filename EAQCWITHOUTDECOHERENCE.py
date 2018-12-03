@@ -122,7 +122,7 @@ for taumax in range (100,101,20):
                     evals_mat[idx[0],:] = real(evals)
     #***************************************  occupation probabilities of the energy levels without decoherence
 
-                    for n, eket in enumerate(ekets):
+                    for n, eket in enumerate(ekets1):
                         if not pargs.decoherence :
                             P_mat[idx[0],n] =abs((eket.dag().data * psi.data)[0,0])**2
     #***********************************  occupation probability of the energy levels with decoherence
