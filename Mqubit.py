@@ -160,7 +160,7 @@ for taumax in [100]:
                     return(psi)
     #**************************************** solving the master equation without and with decoherence(Forth argument is related to deohernce operators)      
                 
-                sesolve(h_t, psii, taulist, [], process_rho, args, _safe_mode=False)
+                sesolve(h_t, psii, taulist, process_rho, args, _safe_mode=False)
                 
     #***********************************  finding the number of equiavalent states with ground state 
                 num=[]
