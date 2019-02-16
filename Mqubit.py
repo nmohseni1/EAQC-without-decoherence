@@ -14,11 +14,7 @@ from scipy.special import factorial
 import matplotlib.pyplot as plt
 import pandas as pd
 
-#parser = argparse.ArgumentParser(description='Adiabatic Quantum Computing using Spin Ensembles', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-#parser.add_argument('--decoherence', action='store_true', help='Enables decoherence')
-#pargs = parser.parse_args()
 
-#print('decoherence: ' + str(pargs.decoherence))
 ##*******************************      set up the parapeteres 
 count_time=0
 mat1 = genfromtxt("60InstancesDeltalargerdelta");
@@ -163,9 +159,7 @@ for taumax in [100]:
                     idx[0] += 1
                     return(psi)
     #**************************************** solving the master equation without and with decoherence(Forth argument is related to deohernce operators)      
-                c_ops = []
-                #if pargs.decoherence :
-                    #c_ops = [np.sqrt(0.0001)*sz1,np.sqrt(0.0001)*sz2,np.sqrt(0.0001)*sz3]
+                
                 sesolve(h_t, psii, taulist, [], process_rho, args, _safe_mode=False)
                 
     #***********************************  finding the number of equiavalent states with ground state 
