@@ -166,7 +166,7 @@ for taumax in [100]:
                 c_ops = []
                 #if pargs.decoherence :
                     #c_ops = [np.sqrt(0.0001)*sz1,np.sqrt(0.0001)*sz2,np.sqrt(0.0001)*sz3]
-                ssesolve(h_t, psii, taulist, [np.sqrt(0.0001)*sz_list[1],np.sqrt(0.0001)*sz_list[2],np.sqrt(0.0001)*sz_list[3]], process_rho,method='heterodyne', args, _safe_mode=True)
+                ssesolve(h_t, psii, taulist, [np.sqrt(0.0001)*sz_list[1],np.sqrt(0.0001)*sz_list[2],np.sqrt(0.0001)*sz_list[3]], process_rho,method='heterodyne', args= {'t_max': max(taulist))
                 
     #***********************************  finding the number of equiavalent states with ground state 
                 num=[]
